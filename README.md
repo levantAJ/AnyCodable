@@ -8,7 +8,7 @@
 [![Build Status](https://travis-ci.org/levantAJ/AnyCodable.svg?branch=master)](https://travis-ci.org/levantAJ/AnyCodable)
 
 # AnyCodable or DynamicCodable 😝
-This library to facilitate decode and encode `[String: Any]`, [Any]
+This library to facilitate decode and encode `[String: Any]`, `[Any]`
 
 ## Requirements
 
