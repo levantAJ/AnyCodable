@@ -7,7 +7,7 @@
 [![Pod License](https://cocoapod-badges.herokuapp.com/l/AnyCodable/badge.png)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Build Status](https://travis-ci.org/levantAJ/AnyCodable.svg?branch=master)](https://travis-ci.org/levantAJ/AnyCodable)
 
-# AnyCodable
+# AnyCodable or DynamicCodable 
 This library to facilitate decode and encode `[String: Any]`, [Any]
 
 ## Requirements
