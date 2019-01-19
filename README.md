@@ -23,7 +23,7 @@ There is a way to use AnyCodable in your project:
 ### Installation with CocoaPods
 
 ```
-pod 'AnyCodable', '1.0'
+pod 'DynamicCodable', '1.0'
 ```
 ### Build Project
 
@@ -33,7 +33,7 @@ community can help you solve it.
 ## How To Use
 
 ```swift
-import AnyCodable
+import DynamicCodable
 
 struct MockCodableObject: Codable {
     var dict: [String: Any]
