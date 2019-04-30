@@ -35,7 +35,7 @@ community can help you solve it.
 ```swift
 import DynamicCodable
 
-struct YourCodableObject: Codable {
+struct YourObject: Codable {
     var dict: [String: Any]
     var array: [Any]
     var optionalDict: [String: Any]?
