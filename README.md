@@ -4,6 +4,7 @@
 
 [![CocoaPods](https://img.shields.io/cocoapods/p/AnyCodable.svg)](https://cocoapods.org/pods/AnyCodable)
 [![CocoaPods](https://img.shields.io/cocoapods/v/AnyCodable.svg)](http://cocoapods.org/pods/AnyCodable)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Pod License](https://cocoapod-badges.herokuapp.com/l/AnyCodable/badge.png)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Build Status](https://travis-ci.org/levantAJ/AnyCodable.svg?branch=master)](https://travis-ci.org/levantAJ/AnyCodable)
 
