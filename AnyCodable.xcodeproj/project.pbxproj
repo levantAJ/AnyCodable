@@ -16,6 +16,12 @@
 		8D746F0121F2F2A900C0A07C /* MockCodableIfPresentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D746EFC21F2F2A900C0A07C /* MockCodableIfPresentObject.swift */; };
 		8D746F0221F2F2A900C0A07C /* MockCodableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D746EFD21F2F2A900C0A07C /* MockCodableObject.swift */; };
 		8D746F0321F2F2A900C0A07C /* DecodingContainer+AnyCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D746EFE21F2F2A900C0A07C /* DecodingContainer+AnyCollectionTests.swift */; };
+		C931FCEF255533A9008474BB /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931FCEE255533A9008474BB /* PropertyWrapper.swift */; };
+		C931FCF7255537E7008474BB /* PropertyWrapper+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931FCF6255537E7008474BB /* PropertyWrapper+Decode.swift */; };
+		C931FCFD25553867008474BB /* MockCodableObjectWithPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931FCFC25553867008474BB /* MockCodableObjectWithPropertyWrapper.swift */; };
+		C931FD0925553BD7008474BB /* PropertyWrapper+Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931FD0825553BD7008474BB /* PropertyWrapper+Encode.swift */; };
+		C931FD0F25553C7E008474BB /* MockCodableIfPresentObjectWithPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931FD0E25553C7E008474BB /* MockCodableIfPresentObjectWithPropertyWrapper.swift */; };
+		C931FD1325553D17008474BB /* PropertyWrapperIfPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931FD1225553D17008474BB /* PropertyWrapperIfPresent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +47,12 @@
 		8D746EFC21F2F2A900C0A07C /* MockCodableIfPresentObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCodableIfPresentObject.swift; sourceTree = "<group>"; };
 		8D746EFD21F2F2A900C0A07C /* MockCodableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCodableObject.swift; sourceTree = "<group>"; };
 		8D746EFE21F2F2A900C0A07C /* DecodingContainer+AnyCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DecodingContainer+AnyCollectionTests.swift"; sourceTree = "<group>"; };
+		C931FCEE255533A9008474BB /* PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapper.swift; sourceTree = "<group>"; };
+		C931FCF6255537E7008474BB /* PropertyWrapper+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyWrapper+Decode.swift"; sourceTree = "<group>"; };
+		C931FCFC25553867008474BB /* MockCodableObjectWithPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCodableObjectWithPropertyWrapper.swift; sourceTree = "<group>"; };
+		C931FD0825553BD7008474BB /* PropertyWrapper+Encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyWrapper+Encode.swift"; sourceTree = "<group>"; };
+		C931FD0E25553C7E008474BB /* MockCodableIfPresentObjectWithPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCodableIfPresentObjectWithPropertyWrapper.swift; sourceTree = "<group>"; };
+		C931FD1225553D17008474BB /* PropertyWrapperIfPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperIfPresent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +98,8 @@
 				8D746EDF21F2F28C00C0A07C /* AnyCodable.h */,
 				8D746EF721F2F29B00C0A07C /* DecodingContainer+AnyCollection.swift */,
 				8D746EF621F2F29B00C0A07C /* EncodingContainer+AnyCollection.swift */,
+				C931FCEE255533A9008474BB /* PropertyWrapper.swift */,
+				C931FD1225553D17008474BB /* PropertyWrapperIfPresent.swift */,
 				8D746EE021F2F28C00C0A07C /* Info.plist */,
 			);
 			path = AnyCodable;
@@ -97,8 +111,12 @@
 				8D746EFA21F2F2A900C0A07C /* AnyCodingKeyTests.swift */,
 				8D746EFE21F2F2A900C0A07C /* DecodingContainer+AnyCollectionTests.swift */,
 				8D746EFB21F2F2A900C0A07C /* EncodingContainer+AnyCollectionTests.swift */,
+				C931FCF6255537E7008474BB /* PropertyWrapper+Decode.swift */,
+				C931FD0825553BD7008474BB /* PropertyWrapper+Encode.swift */,
 				8D746EFC21F2F2A900C0A07C /* MockCodableIfPresentObject.swift */,
 				8D746EFD21F2F2A900C0A07C /* MockCodableObject.swift */,
+				C931FD0E25553C7E008474BB /* MockCodableIfPresentObjectWithPropertyWrapper.swift */,
+				C931FCFC25553867008474BB /* MockCodableObjectWithPropertyWrapper.swift */,
 				8D746EEC21F2F28D00C0A07C /* Info.plist */,
 			);
 			path = AnyCodableTests;
@@ -214,7 +232,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D746EF821F2F29C00C0A07C /* EncodingContainer+AnyCollection.swift in Sources */,
+				C931FCEF255533A9008474BB /* PropertyWrapper.swift in Sources */,
 				8D746EF921F2F29C00C0A07C /* DecodingContainer+AnyCollection.swift in Sources */,
+				C931FD1325553D17008474BB /* PropertyWrapperIfPresent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +244,12 @@
 			files = (
 				8D746F0221F2F2A900C0A07C /* MockCodableObject.swift in Sources */,
 				8D746F0121F2F2A900C0A07C /* MockCodableIfPresentObject.swift in Sources */,
+				C931FCFD25553867008474BB /* MockCodableObjectWithPropertyWrapper.swift in Sources */,
+				C931FCF7255537E7008474BB /* PropertyWrapper+Decode.swift in Sources */,
+				C931FD0F25553C7E008474BB /* MockCodableIfPresentObjectWithPropertyWrapper.swift in Sources */,
 				8D746EFF21F2F2A900C0A07C /* AnyCodingKeyTests.swift in Sources */,
 				8D746F0021F2F2A900C0A07C /* EncodingContainer+AnyCollectionTests.swift in Sources */,
+				C931FD0925553BD7008474BB /* PropertyWrapper+Encode.swift in Sources */,
 				8D746F0321F2F2A900C0A07C /* DecodingContainer+AnyCollectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
