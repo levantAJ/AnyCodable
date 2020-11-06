@@ -62,7 +62,7 @@ extension KeyedEncodingContainer {
     }
 }
 
-private extension KeyedEncodingContainer where K == AnyCodingKey {
+internal extension KeyedEncodingContainer where K == AnyCodingKey {
     mutating func encode(_ value: [String: Any]) throws {
         for (k, v) in value {
             let key = AnyCodingKey(stringValue: k)!
@@ -89,7 +89,7 @@ private extension KeyedEncodingContainer where K == AnyCodingKey {
     }
 }
 
-private extension UnkeyedEncodingContainer {
+internal extension UnkeyedEncodingContainer {
     /// Encodes the given value.
     ///
     /// - parameter value: The value to encode.

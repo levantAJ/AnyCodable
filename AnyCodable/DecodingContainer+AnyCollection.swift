@@ -96,7 +96,7 @@ extension KeyedDecodingContainer {
     }
 }
 
-private extension KeyedDecodingContainer {
+internal extension KeyedDecodingContainer {
     func decode(_ type: [String: Any].Type) throws -> [String: Any] {
         var dictionary: [String: Any] = [:]
         for key in allKeys {
@@ -120,7 +120,7 @@ private extension KeyedDecodingContainer {
     }
 }
 
-private extension UnkeyedDecodingContainer {
+internal extension UnkeyedDecodingContainer {
     mutating func decode(_ type: [Any].Type) throws -> [Any] {
         var elements: [Any] = []
         while !isAtEnd {
