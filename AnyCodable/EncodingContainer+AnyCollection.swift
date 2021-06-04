@@ -81,6 +81,8 @@ private extension KeyedEncodingContainer where K == AnyCodingKey {
                 try encode(dict, forKey: key)
             case let array as [Any]:
                 try encode(array, forKey: key)
+            case let encodable as AnyEncodable:
+                try encode(encodable, forKey: key)
             default:
                 debugPrint("⚠️ Unsuported type!", v)
                 continue
@@ -113,6 +115,8 @@ private extension UnkeyedEncodingContainer {
             case let array as [Any]:
                 var values = nestedUnkeyedContainer()
                 try values.encode(array)
+            case let encodable as AnyEncodable:
+                try encode(encodable)
             default:
                 debugPrint("⚠️ Unsuported type!", v)
             }
@@ -127,5 +131,17 @@ private extension UnkeyedEncodingContainer {
     mutating func encode(_ value: [String: Any]) throws {
         var container = self.nestedContainer(keyedBy: AnyCodingKey.self)
         try container.encode(value)
+    }
+}
+
+public struct AnyEncodable: Encodable {
+
+    private let _encode: (Encoder) throws -> Void
+    public init<T: Encodable>(_ wrapped: T) {
+        _encode = wrapped.encode
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        try _encode(encoder)
     }
 }
