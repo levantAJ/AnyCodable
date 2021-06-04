@@ -99,6 +99,12 @@ extension KeyedDecodingContainer {
             try decodeNil(forKey: key) == false else { return nil }
         return try decode(type, forKey: key)
     }
+    
+    public func decodeIfPresent<T: Decodable>(_ type: [String: Any].Type, forKey key: KeyedDecodingContainer<K>.Key) throws -> [String: T]? {
+        guard contains(key),
+            try decodeNil(forKey: key) == false else { return nil }
+        return try decode(type, forKey: key)
+    }
 }
 
 private extension KeyedDecodingContainer {
