@@ -56,6 +56,11 @@ extension KeyedDecodingContainer {
         let values = try nestedContainer(keyedBy: AnyCodingKey.self, forKey: key)
         return try values.decode(type)
     }
+    
+    public func decode<T: Decodable>(_ type: [String: Any].Type, forKey key: KeyedDecodingContainer<K>.Key) throws -> [String: T] {
+        let values = try nestedContainer(keyedBy: AnyCodingKey.self, forKey: key)
+        return try values.decode(type)
+    }
 
     /// Decodes a value of the given type for the given key, if present.
     ///
@@ -118,6 +123,16 @@ private extension KeyedDecodingContainer {
         }
         return dictionary
     }
+    
+    func decode<T: Decodable>(_ type: [String: Any].Type) throws -> [String: T] {
+        var dictionary: [String: T] = [:]
+        for key in allKeys {
+            if let object = try? decode(T.self, forKey: key) {
+                dictionary[key.stringValue] = object
+            }
+        }
+        return dictionary
+    }
 }
 
 private extension UnkeyedDecodingContainer {
@@ -145,3 +160,4 @@ private extension UnkeyedDecodingContainer {
         return elements
     }
 }
+
