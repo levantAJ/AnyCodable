@@ -56,6 +56,11 @@ extension KeyedDecodingContainer {
         let values = try nestedContainer(keyedBy: AnyCodingKey.self, forKey: key)
         return try values.decode(type)
     }
+    
+    public func decode<T: Decodable>(_ type: [String: Any].Type, forKey key: KeyedDecodingContainer<K>.Key) throws -> [String: T] {
+        let values = try nestedContainer(keyedBy: AnyCodingKey.self, forKey: key)
+        return try values.decode(type)
+    }
 
     /// Decodes a value of the given type for the given key, if present.
     ///
@@ -94,6 +99,12 @@ extension KeyedDecodingContainer {
             try decodeNil(forKey: key) == false else { return nil }
         return try decode(type, forKey: key)
     }
+    
+    public func decodeIfPresent<T: Decodable>(_ type: [String: Any].Type, forKey key: KeyedDecodingContainer<K>.Key) throws -> [String: T]? {
+        guard contains(key),
+            try decodeNil(forKey: key) == false else { return nil }
+        return try decode(type, forKey: key)
+    }
 }
 
 private extension KeyedDecodingContainer {
@@ -114,6 +125,16 @@ private extension KeyedDecodingContainer {
                 dictionary[key.stringValue] = dict
             } else if let array = try? decode([Any].self, forKey: key) {
                 dictionary[key.stringValue] = array
+            }
+        }
+        return dictionary
+    }
+    
+    func decode<T: Decodable>(_ type: [String: Any].Type) throws -> [String: T] {
+        var dictionary: [String: T] = [:]
+        for key in allKeys {
+            if let object = try? decode(T.self, forKey: key) {
+                dictionary[key.stringValue] = object
             }
         }
         return dictionary
@@ -145,3 +166,4 @@ private extension UnkeyedDecodingContainer {
         return elements
     }
 }
+
